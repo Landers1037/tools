@@ -142,13 +142,13 @@ def upposts():
     :return:
     """
     if os.path.exists(os.path.join(opt, 'blog.json')):
+        posts_list = session.query(Posts).all()
+        for p in posts_list:
+            session.delete(p)
+        session.commit()
+
         with open(os.path.join(opt,"blog.json"),'r',encoding='utf-8')as f:
             data = json.load(f)
-            posts_list = session.query(Posts).all()
-            for p in posts_list:
-                session.delete(p)
-            session.commit()
-
             for d in data:
                 try:
                     # flag = session.query(Posts).filter(Posts.url == d["url"].replace("/", "")).first()
@@ -158,7 +158,7 @@ def upposts():
                     onepost = Posts(title=title, url=url, content=content, pin=False)
                     session.add(onepost)
                     session.commit()
-                except:
+                except  Exception as e:
                     pass
 
 
@@ -284,5 +284,5 @@ def blog_test():
     """
     bl = session.query(Posts).all()
     for b in bl:
-        print(b)
+        print(b.title,b.url)
 

@@ -11,7 +11,7 @@ from utils.to_json import newjson
 @click.option("-r","--remove",is_flag=True,default=False,help="删除数据库")
 @click.option("-n","--new",is_flag=True,default=False,help="新建数据库")
 @click.option("-j","--json",default=None,help="json文件")
-@click.option("-t","--test",default=None,help="文章测试")
+@click.option("-t","--test",is_flag=True,default=False,help="文章测试")
 def blog(remove,new,json,test):
     """
     生成/删除数据库文件
