@@ -9,6 +9,7 @@ from .cmd_blog_update import *
 from .cmd_webp import webp
 from .cmd_img2b64 import img64
 from .cmd_imgzip import imgzip
+from .cmd_ts import ts
 from .cmd_send import send
 from .cmd_test import *
 

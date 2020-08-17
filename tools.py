@@ -6,7 +6,7 @@
 #超级工具集合
 
 import click
-from tools_cmd import blog,update,webp,img64,imgzip,test,system,send
+from tools_cmd import blog,update,webp,img64,imgzip,ts,test,system,send
 
 @click.group(name="tools",invoke_without_command=True)
 def tools():
@@ -26,6 +26,8 @@ tools.add_command(webp)
 tools.add_command(img64)
 #imgzip
 tools.add_command(imgzip)
+#mp4 ts
+tools.add_command(ts)
 #send
 tools.add_command(send)
 #test

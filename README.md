@@ -13,6 +13,7 @@ tools for personal use
 - 图片质量压缩，不改变分辨率的情况下尽量减小图片体积
 - 图片转换为base64
 - 推送文件到远程服务器，支持`POST`请求的http文件服务器
+- 视频文件切片为ts
 
 ## 使用
 
@@ -239,7 +240,16 @@ Options:
 $tools send "/path/test.zip" http://127.0.0.1:1234/upload
 ```
 
+### 视频切片
 
+```bash
+$tools ts
+$tools ts -n opt-name
+```
+
+将当前路径下的全部视频文件转为ts流，生成m3u8文件
+
+添加参数`-n`自定义输出的文件名称，默认为传入的文件名
 
 ### 注意事项
 
